@@ -55,4 +55,8 @@ resource "aws_route_table" "ecomm-pub-rt" {
   }
 }
 
-
+# Public Route Table Association
+resource "aws_route_table_association" "ecomm-pub-asc" {
+  subnet_id      = aws_subnet.ecomm-pub-sn.id
+  route_table_id = aws_route_table.ecomm-pub-rt.id
+}
