@@ -70,4 +70,8 @@ resource "aws_route_table" "ecomm-pvt-rt" {
   }
 }
 
-
+# Private Route Table Association
+resource "aws_route_table_association" "ecomm-pvt-asc" {
+  subnet_id      = aws_subnet.ecomm-pvt-sn.id
+  route_table_id = aws_route_table.ecomm-pvt-rt.id
+}
